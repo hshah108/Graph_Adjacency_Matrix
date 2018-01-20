@@ -10,10 +10,11 @@ public class GraphDemo {
 		g.bfs("A");
 		g = createGraph();
 		g.dfs("A");
+		System.out.println("Is graph connected : " + g.isGraphConnected());
 	}
 	
 	private static Graph createGraph() {
-		Graph g = new Graph(8);
+		Graph g = new Graph(9);
 		g.addNode("A");
 		g.addNode("B");
 		g.addNode("C");
@@ -22,6 +23,7 @@ public class GraphDemo {
 		g.addNode("F");
 		g.addNode("G");
 		g.addNode("H");
+		g.addNode("I");
 		
 		g.addEdge("A", "B");
 		g.addEdge("B", "C");

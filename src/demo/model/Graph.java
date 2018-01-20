@@ -72,6 +72,20 @@ public class Graph {
 		}
 	}
 
+	public boolean isGraphConnected() {
+		Node node = getNode();
+		dfs(node.getLabel());
+		for(Node n : nodes) {
+			if(!n.isVisited()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private Node getNode() {
+		return nodes[0];
+	}
 	private List<Node> getAdjacentVertices(String label) {
 		int nodeIndex = getNodeIndex(label);
 		List<Node> adjacentNodes = new ArrayList<>();
