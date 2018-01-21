@@ -51,6 +51,7 @@ public class Graph {
 				}
 			});
 		}
+		resetFlags();
 	}
 	
 	public void dfs(String sourceLabel) {
@@ -70,6 +71,7 @@ public class Graph {
 				node = stack.pop();
 			}
 		}
+		resetFlags();
 	}
 
 	public boolean isGraphConnected() {
@@ -81,6 +83,13 @@ public class Graph {
 			}
 		}
 		return true;
+	}
+	
+	private void resetFlags() {
+		for(Node node : nodes) {
+			node.setQueued(false);
+			node.setVisited(false);
+		}
 	}
 	
 	private Node getNode() {

@@ -7,10 +7,9 @@ public class GraphDemo {
 	public static void main(String[] s) {
 		
 		Graph g = createGraph();
-		g.bfs("A");
-		g = createGraph();
+		//g.bfs("A");
 		g.dfs("A");
-		System.out.println("Is graph connected : " + g.isGraphConnected());
+		//System.out.println("Is graph connected : " + g.isGraphConnected());
 	}
 	
 	private static Graph createGraph() {
@@ -25,14 +24,14 @@ public class GraphDemo {
 		g.addNode("H");
 		g.addNode("I");
 		
+		g.addEdge("E", "G");
+		g.addEdge("E", "H");
+		g.addEdge("C", "E");
+		g.addEdge("E", "F");
 		g.addEdge("A", "B");
 		g.addEdge("B", "C");
 		g.addEdge("B", "H");
 		g.addEdge("C", "D");
-		g.addEdge("C", "E");
-		g.addEdge("E", "H");
-		g.addEdge("E", "F");
-		g.addEdge("E", "G");
 		
 		return g;
 	}
